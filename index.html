@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>JIAAA_焦阿攝影</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap&subset=chinese-traditional"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./vegas/vegas.css">
+    <link rel="stylesheet" href="./animate.css-master/animate.min.css">
+</head>
+<style>
+    /* * {
+        outline: 1px solid #f00;
+    } */
+
+    body {
+
+        font-family: 'Noto Sans TC', sans-serif, Arial, Helvetica, sans-serif;
+        /* width: 100vw; */
+    }
+
+    .index_box {
+        background-color: #594747;
+        /* background: url(./images/index_box.jpg) no-repeat center center; */
+        background-size: cover;
+        height: 100vh !important;
+        background-attachment: fixed;
+    }
+
+
+    /*header*/
+    /*------------------主選單*/
+    nav.main_menu {
+        width: 100vw;
+        position: fixed;
+        padding: 80px;
+        z-index: 9999;
+        transition: .5s;
+    }
+
+    .main_menu_main {
+        z-index: 999;
+    }
+
+    a.logo_w {
+        display: none;
+    }
+
+    .logo_w img {
+        width: 175px;
+    }
+
+    a.logo_b {
+        display: none;
+    }
+
+    .logo_b img {
+        width: 175px;
+    }
+
+    .logo_w.cansee {
+        display: block;
+    }
+
+    .logo_b.cansee {
+        display: block;
+    }
+
+
+    .menu_w img {
+        width: 80px;
+    }
+
+    /*------------------彈出複選單*/
+    .main_menu_dropdown {
+        color: #FFF;
+        display: flex;
+        padding-top: 110px;
+        padding-bottom: 60px;
+        position: fixed;
+        background: rgb(89, 71, 71, .8);
+        border-radius: 30px 0px 0px 30px;
+        top: 30px;
+        right: -500px;
+        transition: .6s cubic-bezier(.66, 0, .33, 1);
+    }
+
+    /*彈出選單的按鈕*/
+    .menu_button {
+        height: 30px;
+    }
+
+    .bar_title {
+        top: 6px;
+        right: 5px;
+        color: rgb(255, 255, 255, 1);
+        list-style-type: none;
+        transition: .6s cubic-bezier(.46, -0.15, .67, 1.16);
+    }
+
+    .bar_title.cansee {
+        color: rgb(0, 0, 0);
+    }
+
+    .bar {
+        right: 5px;
+        width: 36px;
+        height: 1px;
+        background: #fff;
+        transition: .6s cubic-bezier(.46, -0.15, .67, 1.16);
+    }
+
+    .bar.cansee {
+        background: rgb(0, 0, 0);
+    }
+
+    .bar1 {
+        top: 10px;
+    }
+
+    .bar2 {
+        bottom: 10px;
+
+    }
+
+    #header_menu_btn:hover {
+        cursor: pointer;
+    }
+
+    /*彈出選單的內容*/
+
+    .main_menu_dropdown li {
+        text-align: right;
+    }
+
+    .main_menu_dropdown li a {
+        display: block;
+        font-weight: 100;
+        text-align: right;
+        color: #FFF;
+        width: 100%;
+        padding: 20px 40px 20px 80px;
+        transition: .6s;
+        cursor: pointer;
+    }
+
+    .main_menu_dropdown_english {
+        font-size: 0.875rem;
+        text-align: center;
+        border-radius: 50px;
+        background: #BF988A;
+    }
+
+    .bar_title.active {
+        color: rgb(255, 255, 255, 0);
+        -webkit-transform: translate(0px, -7px);
+        transform: translate(0px, -7px);
+    }
+
+    .bar1.active {
+        background: #fff;
+        -webkit-transform: translate(0px, -12px) rotate(-225deg);
+        transform: translate(0px, -12px) rotate(-225deg);
+    }
+
+    .bar2.active {
+        background: #fff;
+        -webkit-transform: translate(0px, -21px) rotate(225deg);
+        transform: translate(0px, -21px) rotate(225deg);
+    }
+
+    .pointline_white {
+        top: 33px;
+        left: 0px;
+        background: #fff;
+        height: 1px;
+        transform: scale(0, 0);
+        width: 1px;
+        transition: .6s;
+    }
+
+    /*---------互動---------彈出複選單*/
+    .main_menu_dropdown li a:hover {
+        background: #BF988A;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
+        padding: 20px 60px 20px 60px;
+
+    }
+
+    .main_menu_dropdown li a:hover .main_menu_dropdown_english {
+        background: #594747;
+    }
+
+    .main_menu_dropdown li a:hover .pointline_white {
+        transform: scale(100, 1);
+    }
+
+    .main_menu_dropdown.active {
+        right: 0px;
+    }
+
+
+    /*home*/
+    .home {
+        margin: auto;
+        color: #FFF;
+        height: 100vh;
+        text-align: center;
+        opacity: 0;
+        transform: translate(0px, -10px);
+        animation: home_center_pimg_animation 3s cubic-bezier(.37, .01, .37, .99) 1s forwards;
+    }
+
+    .home img {
+        margin: 25px;
+        width: 80px;
+    }
+
+    .home h2 {
+        font-size: 8rem;
+        font-weight: 700;
+    }
+
+    .slogan_frame {
+        padding: 1vw 8vw;
+        border: 1px solid #FFF;
+        position: relative;
+        /* background: rgb(89, 71, 71, .3); */
+        overflow: hidden;
+    }
+
+    .slogan_frame::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(255, 255, 255);
+        transform: rotate(75deg);
+        z-index: -1;
+        transform-origin: left top;
+    }
+
+    .slogan_frame p {
+        font-weight: 100;
+        font-size: 1.5rem;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    @keyframes home_center_pimg_animation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .index_enter {
+        color: #FFF;
+        bottom: 15vh;
+        right: calc(50% - 30px);
+        /* background-color:rgba(255, 255, 255, 0.3) ; */
+        padding: 10px;
+    }
+
+    .index_enter:hover {
+        cursor: pointer;
+    }
+
+    .enter_line {
+        transform-origin: center top;
+        background: #FFF;
+        ;
+        bottom: 0px;
+        height: 100px;
+        width: 1px;
+        right: 50%;
+        animation: enter_line_animation;
+        animation-timing-function: cubic-bezier(.49, 0, .51, 1);
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    .enter_line_black {
+        background: rgb(2, 2, 2);
+        ;
+        bottom: -100px;
+        height: 200px;
+        width: 1px;
+        right: 50%;
+    }
+
+    .enter_line_black_up {
+        background: rgb(2, 2, 2);
+        ;
+        bottom: -100px;
+        height: 100px;
+        width: 1px;
+        right: 50%;
+    }
+
+    @keyframes enter_line_animation {
+        0% {
+            transform: translate(0px, 0px) scaleY(0);
+            ;
+        }
+
+        50% {
+            transform: translate(0px, 0px);
+
+        }
+
+        90% {
+            transform: translate(0px, 100px) scaleY(.8);
+        }
+
+        100% {
+            transform: translate(0px, 100px) scaleY(0);
+        }
+    }
+
+
+    .main_menu_dropdown_mobile {
+        display: none;
+        color: #FFF;
+    }
+
+    @media all and (max-width: 768px) {
+        nav.main_menu {
+            background: rgb(191, 152, 138, .95);
+            padding: 20px;
+        }
+
+        nav.main_menuside_guided {
+            background: rgb(255, 255, 255, .95);
+        }
+
+        nav.main_menu ul {
+            margin: 0px;
+        }
+
+        a.logo_w {
+            display: block;
+        }
+
+        .logo_w img {
+            height: 30px;
+            width: auto;
+        }
+
+        .logo_b.cansee {
+            display: none;
+        }
+
+        .bar.cansee {
+            background: rgb(255, 255, 255);
+        }
+
+        .bar_title {
+            display: none;
+        }
+
+        .bar1.active {
+            -webkit-transform: translate(0px, 5px) rotate(-225deg);
+            transform: translate(0px, 5px) rotate(-225deg);
+            background: #594747;
+        }
+
+        .bar2.active {
+            -webkit-transform: translate(0px, -4px) rotate(225deg);
+            transform: translate(0px, -4px) rotate(225deg);
+            background: #594747;
+        }
+
+        .home {
+            position: absolute;
+            top: 4vh;
+            transform: translate(0px, 0px);
+
+        }
+
+        .home h2 {
+            font-size: 4rem;
+            font-weight: 700;
+        }
+
+        .home img {
+            margin: 25px;
+            width: 35px;
+        }
+
+        .slogan_frame {
+            max-width: 75vw;
+            border: 1px solid #FFF;
+        }
+
+        .slogan_frame p {
+            font-weight: 100;
+            font-size: 1rem;
+        }
+
+        @keyframes home_center_pimg_animation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .index_enter {
+            bottom: 20vh;
+        }
+
+        .hide-in-mobile {
+            display: none;
+        }
+
+        .main_menu_dropdown_mobile {
+            color: #FFF;
+            font-weight: 100;
+            padding: 80px 0px 0px 0px;
+            position: fixed;
+            top: -600px;
+            width: 100vw;
+            text-align: center;
+            display: flex;
+            background: rgba(110, 91, 91, 0.9);
+            z-index: 999;
+            transition: .7s cubic-bezier(.29, 0, 0, 1.01);
+            opacity: 0;
+
+        }
+
+        .main_menu_dropdown_mobile a {
+            display: block;
+            color: #FFF;
+            width: 50vw;
+            padding: 20px 0px;
+            border-bottom: 1px solid rgb(191, 152, 138, 1);
+        }
+
+        .main_menu_dropdown_mobile p {
+            font-size: 1.3rem;
+            padding: 0px 0px 5px 0px;
+            margin: 0px;
+        }
+
+        .main_menu_dropdown_english {
+            font-size: 0.5rem;
+        }
+
+        .main_menu_dropdown_mobile.active {
+            top: 0px;
+            opacity: 1;
+        }
+    }
+
+
+    .guided {
+        position: fixed;
+        display: flex;
+        top: 25%;
+        right: 60px;
+        /* border:1px solid #594747; */
+        height: auto;
+        /* background:#594747; */
+        z-index: 999999;
+
+    }
+
+    .guided_point {
+        display: block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: #BF988A;
+        margin: 50px 20px;
+    }
+
+    .guided_point.now {
+        background: #594747;
+    }
+
+    .side_guided {
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .side_guided.scrolldown {
+        opacity: 1;
+    }
+
+    .side_guided.hide {
+        display: none;
+    }
+
+    .guided_name {
+        transition: .5s;
+        position: fixed;
+        top: calc(25% + 35px);
+        right: 65px;
+        /* border: 1px solid #c92424; */
+        z-index: 999999;
+
+
+    }
+
+    .guided_name_circle {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #594747;
+        border-radius: 50%;
+    }
+
+    .guided_name_line {
+        background: #594747;
+        padding: 0.5px 5px;
+    }
+
+
+    .guided_name_title {
+        display: flex;
+        position: relative;
+        font-size: .9rem;
+        line-height: 28px;
+        height: 30px;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 0px;
+    }
+
+
+    .guided_name_title li {
+        transform: translateY(-10px);
+        padding: 10px 0px;
+        transition: .5s;
+    }
+
+    .guided_name.portfolio_point {
+        top: calc(25% + 150px);
+        /* color: #FFF; */
+    }
+
+    .guided_name_title li.portfolio_point {
+        transform: translateY(-60px);
+    }
+
+    .guided_name.booknow_point {
+        top: calc(25% + 264px);
+    }
+
+    .guided_name_title li.booknow_point {
+        transform: translateY(-107px);
+    }
+
+    .guided_name.contact_point {
+        top: calc(25% + 380px);
+        color: #FFF;
+    }
+
+    .guided_name_title li.contat_point {
+        transform: translateY(-60px);
+    }
+
+    @media all and (max-width: 768px) {
+        .side_guided.scrolldown {
+            display: none;
+        }
+
+    }
+
+
+    /* about-------------------------------------------------------------------------------------------------------------------------- */
+    .about {
+        /* border: 1px solid #5347ff; */
+        max-width: 1400px;
+        margin-top: 100px;
+        margin-bottom: 140px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7rem;
+        font-size: 0.9rem;
+
+    }
+
+    .about h2 {
+        margin: 45px 0px;
+        font-weight: 100;
+        font-size: 3.5rem;
+    }
+
+    .about_box {
+        display: flex;
+        flex: 1 0 0;
+        /* border: 1px solid #ff2c2c; */
+        padding-right: 10px;
+    }
+
+    .about_picbox {
+        display: flex;
+    }
+
+    .about_picbox.main {
+        height: 90vh;
+    }
+
+    .about_picbox figure.main {
+        width: 320px;
+        height: 600px;
+        overflow: hidden;
+        padding: 10px;
+        margin: 0px;
+    }
+
+    .about_picbox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about_box_right {
+        max-width: 560px;
+    }
+
+    .about_box_right figure {
+        width: 222px;
+    }
+
+    .about_box_right article {
+        min-height: 330px;
+    }
+
+    .about_box_right h3 {
+        margin: 45px 0px;
+        font-weight: 300;
+        font-size: 2rem;
+        color: rgb(191, 152, 138);
+    }
+
+    @media all and (max-width: 768px) {
+        .about_box {
+            padding: 0px 60px;
+
+        }
+
+        .about_box.hide-in-mobile {
+            display: none;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            max-width: calc(50% + 60px);
+        }
+
+        section.about {
+            flex-direction: column !important;
+        }
+
+    }
+
+    /* ----------------portfolio----------------- */
+    .portfolio {
+        text-align: center;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7rem;
+        font-size: 0.9rem;
+        /* border: 1px solid red; */
+        margin-bottom: 60px;
+    }
+
+    .portfolio article {
+        max-width: 960px;
+    }
+
+    .portfolio h2 {
+        margin-top: 40px;
+        font-weight: 100;
+        font-size: 3.5rem;
+    }
+
+    .portfolio h4 {
+        font-size: .8rem;
+        color: rgb(145, 145, 145);
+        font-weight: 100;
+        letter-spacing: 15px;
+        margin: 0px 0px 60px 15px;
+    }
+
+    .portfolio_main {
+        line-height: 1.7rem;
+        font-size: 0.9em;
+
+        background: #594747;
+        height: 800px;
+        width: 55%;
+        /* border: 1px solid blue; */
+        overflow: hidden;
+        transition: .6s;
+    }
+
+    .portfolio_main:hover {
+        cursor: pointer;
+        background: rgb(255, 255, 255);
+    }
+
+    .portfolio_main:hover h2 {
+        color: black;
+    }
+
+    .portfolio_main:hover p {
+        color: black;
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .portfolio_main.left:hover img {
+        opacity: 1;
+    }
+
+
+    .portfolio_main:hover .portfolio_more_btn {
+        color: black;
+        background: url(./images/more_linebg_B.svg) center bottom no-repeat;
+        transform: translatex(-0px);
+        font-size: 1rem;
+    }
+
+    .portfolio_main:hover figure img {
+        width: 105%;
+        height: 105%;
+
+    }
+
+    .portfolio_main.left {
+        flex: 1.1 0 0;
+    }
+
+    .portfolio_main.left img {
+        transition: .5s;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: .5;
+    }
+
+    .portfolio_main.right {
+        flex: 1 0 0;
+    }
+
+    .portfolio_main figure {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .portfolio_main article {
+        max-width: 400px;
+    }
+
+    .portfolio_main_title {
+        margin-bottom: 60px;
+    }
+
+    .portfolio_main h2 {
+        display: inline-block;
+        font-weight: 100;
+        font-size: 3.5rem;
+        color: #FFF;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .portfolio_main p {
+        display: inline-block;
+        color: #FFF;
+        font-weight: 100;
+    }
+
+    .portfolio_main.time {
+        font-size: .5rem;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .portfolio_main a {
+        color: #fff;
+        font-weight: 100;
+    }
+
+    .portfolio_more_btn {
+        width: 150px;
+        padding: 10px 5px;
+        color: #fff;
+        /* border: 1px solid #c22929; */
+        background: url(./images/more_linebg.svg) center bottom no-repeat;
+        transition: .5s;
+        transform: translatex(10px);
+
+    }
+
+    @media all and (max-width: 768px) {
+        .portfolio {
+            margin-bottom: 0px;
+            background: #594747;
+        }
+
+        .portfolio h2 {
+            color: #FFF;
+        }
+
+        .portfolio h4 {
+            margin: 0px 0px 0px 15px;
+        }
+
+        .portfolio article {
+            text-align: center;
+            font-weight: 300;
+            color: #FFF;
+            max-width: 250px;
+            margin: 40px 0px;
+
+        }
+
+        .portfolio p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        section.portfolio_main_out {
+            display: block !important;
+            padding: 30px 30px 40px 30px;
+            background: #594747;
+
+        }
+
+        .portfolio_main {
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio_main h2 {
+            margin-top: 15px;
+            font-size: 1.8rem;
+        }
+
+        .portfolio_main article {
+            margin: 0px;
+        }
+
+        .portfolio_main.left figure {
+            border-radius: 5px;
+        }
+
+        .portfolio_main.left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio_main p.time {
+            font-size: .5rem;
+            display: block;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .portfolio_main a {
+            display: none;
+        }
+
+        .portfolio_main p.cont {
+            display: none !important;
+        }
+
+        .portfolio_main .portfolio_main_title {
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+
+    .bookNow {
+        height: 800px;
+        background: url(./images/book_bg.svg) center center no-repeat;
+        text-align: center;
+        margin: auto;
+    }
+
+    .bookNow h2 {
+        font-size: 1.7rem;
+        font-weight: 100;
+        letter-spacing: 5px;
+        padding: 0px 0px 0px 5px;
+        margin-bottom: 70px;
+    }
+
+    .bookNow article {
+        background-color: #FFF;
+
+    }
+
+    .bookNow p {
+        color: #594747;
+        font-size: .9rem;
+        font-weight: 300;
+        max-width: 700px;
+        line-height: 2rem;
+    }
+
+    .bookNow_btn {
+        background-color: #FFF;
+        display: block;
+        color: #594747;
+        border: 1px solid #594747;
+        max-width: 200px;
+        /* height: 100px; */
+        padding: 15px 2px;
+        margin: 60px auto;
+
+    }
+
+    @media all and (max-width: 768px) {
+        .bookNow {
+            padding: 60px;
+        }
+    }
+
+    .contactus {
+        color: #fff;
+        font-weight: 300;
+        background: #594747;
+
+    }
+
+    .contactus h2 {
+        text-align: center;
+    }
+
+    .contactus_box {
+        padding: 60px;
+        flex: 1 0 0;
+    }
+
+    .contactus_box a {
+        display: block;
+        width: 100px;
+    }
+
+    .contactus_box_bottom {
+        margin: 60px;
+    }
+
+    .contactus_box_bottom figure {
+        padding: 0px;
+        margin: 0px;
+        max-width: 10vw;
+        height: 10vw;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .contactus_box_bottom figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .contactus_box img {
+        max-width: 100px;
+    }
+
+    .contactus_fram {
+        max-width: 1440px;
+        margin: auto;
+        padding: 200px 0px;
+    }
+
+    @media all and (max-width: 768px) {
+        .contactus_fram {
+            padding: 60px 0px;
+
+        }
+
+        .contactus_fram_2 {
+            flex-direction: column;
+        }
+
+        .contactus_box img {
+            max-width: calc(50vw - 40px);
+            width: 100%;
+        }
+
+        .contactus_box.two {
+            line-height: 150px;
+            padding: 0px;
+            flex-wrap: wrap;
+            padding: 0px 60px;
+        }
+        .contactus_box.one {
+            padding: 40px 60px;
+        }
+
+        .contactus_box_bottom {
+            display: none !important;
+        }
+
+
+        .contactus_box.one figure img {
+            padding: 1px 0px;
+        }
+
+        .contactus_box a.contactus_box_icon {
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <div class="index_box position-relative" id="top">
+        <header>
+            <nav class="main_menu">
+                <ul class="main_menu_main d-flex justify-content-between list-unstyled" style="z-index:999">
+                    <li><a class="logo_w cansee" data-id="top"><img src="./images/logo_w.svg" alt="" class=""></a>
+                        <a class="logo_b" data-id="top"><img src="./images/logo_b.svg" alt="" class=""></a></li>
+                    <li style="z-index:9">
+                        <div class="d-flex flex-column justify-content-center" id="header_menu_btn">
+                            <div class="bar_title position-relative">MENU</div>
+                            <div class="menu_button position-relative">
+                                <div class="bar bar1 position-absolute"></div>
+                                <div class="bar bar2 position-absolute"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="main_menu_dropdown list-unstyled flex-column justify-content-end hide-in-mobile">
+                    <li class="d-flex justify-content-end ">
+                        <a class="text-decoration-none position-relative" data-id="about">
+                            <div class="pointline_white position-absolute"></div>關於JIAAA
+                            <div class="main_menu_dropdown_english my-1 py-1 px-3">About</div>
+                        </a>
+                    </li>
+                    <li class="d-flex justify-content-end">
+                        <a class="text-decoration-none position-relative" data-id="portfolio">
+                            <div class="pointline_white position-absolute"></div>系列相冊
+                            <div class="main_menu_dropdown_english my-1 py-1 px-3">Portfolio</div>
+                        </a>
+                    </li>
+                    <li class="d-flex justify-content-end">
+                        <a class="text-decoration-none position-relative" data-id="book">
+                            <div class="pointline_white position-absolute"></div>預約拍攝
+                            <div class="main_menu_dropdown_english my-1 py-1 px-3">Book</div>
+                        </a>
+                    </li>
+                    <li class="d-flex justify-content-end">
+                        <a class="text-decoration-none position-relative" data-id="contact">
+                            <div class="pointline_white position-absolute"></div>聯繫焦阿
+                            <div class="main_menu_dropdown_english my-1 py-1 px-3">Contact Us</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="main_menu_dropdown_mobile list-unstyled flex-column justify-content-center">
+                <li class="d-flex justify-content-center ">
+                    <a class="text-decoration-none d-flex flex-column justify-content-center align-items-center"
+                        data-id="about">
+                        <p>關於JIAAA</p>
+                        <div class="main_menu_dropdown_english my-1 py-1 px-3">About</div>
+                    </a>
+                </li>
+                <li class="d-flex justify-content-center">
+                    <a class="text-decoration-none d-flex flex-column justify-content-center align-items-center"
+                        data-id="portfolio">
+                        <p>系列相冊</p>
+                        <div class="main_menu_dropdown_english my-1 py-1 px-3">Portfolio</div>
+                    </a>
+                </li>
+                <li class="d-flex justify-content-center">
+                    <a class="text-decoration-none d-flex flex-column justify-content-center align-items-center"
+                        data-id="book">
+                        <p>預約拍攝</p>
+                        <div class="main_menu_dropdown_english my-1 py-1 px-3">Book</div>
+                    </a>
+                </li>
+                <li class="d-flex justify-content-center">
+                    <a class="text-decoration-none d-flex flex-column justify-content-center align-items-center"
+                        data-id="contact">
+                        <p>聯繫焦阿</p>
+                        <div class="main_menu_dropdown_english my-1 py-1 px-3">Contact Us</div>
+                    </a>
+                </li>
+
+            </ul>
+        </header>
+        <div class="side_guided">
+            <ul class="guided list-unstyled justify-content-center flex-column ">
+                <li>
+                    <a class="guided_point now"></a>
+                </li>
+                <li>
+                    <a class="guided_point"></a>
+                </li>
+                <li>
+                    <a class="guided_point"></a>
+                </li>
+                <li>
+                    <a class="guided_point"></a>
+                </li>
+            </ul>
+            <div class="guided_name d-flex align-items-center justify-content-center">
+                <ul class="list-unstyled guided_name_title flex-column">
+                    <li>About</li>
+                    <li>Portfolio</li>
+                    <li>BookNow</li>
+                    <li>ContactUs</li>
+                </ul>
+                <div class="guided_name_line"></div>
+                <div class="guided_name_circle"></div>
+            </div>
+        </div>
+        <div class="container home d-flex justify-content-center align-items-center flex-column">
+            <h2>JIAAA</h2>
+            <div class="slogan_frame">
+                <p>Record Your Brightest Moments</p>
+            </div>
+            <figure><img src="./images/camera_icon.svg" alt=""></figure>
+        </div>
+        <div class="position-absolute index_enter animated 3 flash delay-2s"><a data-id="about">Enter</a></div>
+        <div class="position-absolute enter_line_black"></div>
+        <div class="position-absolute enter_line"></div>
+        <div class="position-absolute enter_line_black_up"></div>
+
+    </div>
+
+    <div class="about d-flex justify-content-center flex-grow align-items-center" id="about">
+        <div class="about_box justify-content-center hide-in-mobile">
+            <div class="about_picbox hide-in-mobile" data-aos="fade-up" data-aos-duration="1000">
+                <figure class="main hide-in-mobile"><img src="./images/About_computer.jpg" alt=""></figure>
+            </div>
+            <div class="about_picbox main align-items-end hide-in-mobile" data-aos="fade-up" data-aos-duration="1000">
+                <figure class="main hide-in-mobile"><img src="./images/About_camera.jpg" alt=""></figure>
+            </div>
+        </div>
+        <div class="about_box d-flex align-items-center justify-content-center" data-aos="fade-down"
+            data-aos-duration="1000">
+            <div class="about_box_right d-flex justify-content-center flex-column">
+                <figure><img src="./images/logo_b.svg" alt="" class=""></figure>
+                <h2>專業拍攝&後期製作</h2>
+                <article>
+                    <p>微有球頭時主，在在案家？防上家奇否這、的業入：言思政是參長他回票失劇就高論北失後認從隊化上小落找根正不社。氣出那月。年管決。有國樂分美關石可建續你人就腳爭地把之的我期最到客富方修絕也更車力心：中自教了人接財作孩、修合的大空種即行海自白、通的清去有度：名方常！
+
+                    </p>
+                    <p>不市示清的在了甚而師了大，果一議一空：味小至五了工能方的育算現利急，護開去機人愛非觀全待眼孩雖言落好國月規，
+                        一到生過，中外多母理能建家！個中刻景管已我說方間臺因月：被成？
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <section class="about d-flex justify-content-center flex-grow align-items-center" data-aos="fade-up"
+        data-aos-duration="1000">
+        <div class="about_box d-flex justify-content-center">
+            <div class="about_picbox d-flex align-items-center">
+                <figure class=""><img src="./images/About_computer.jpg" alt=""></figure>
+            </div>
+        </div>
+        <div class="about_box d-flex align-items-center justify-content-center">
+            <div class="about_box_right d-flex justify-content-center flex-column align-items-center">
+                <h3>區域大標題一</h3>
+                <article>
+                    <p>微有球頭時主，在在案家？防上家奇否這、的業入：言思政是參長他回票失劇就高論北失後認從隊化上小落找根正不社。氣出那月。年管決。有國樂分美關石可建續你人就腳爭地把之的我期最到客富方修絕也更車力心：中自教了人接財作孩、修合的大空種即行海自白、通的清去有度：名方常！
+
+                    </p>
+                    <p>不市示清的在了甚而師了大，果一議一空：味小至五了工能方的育算現利急，護開去機人愛非觀全待眼孩雖言落好國月規，
+                        一到生過，中外多母理能建家！個中刻景管已我說方間臺因月：被成？
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="about d-flex justify-content-center flex-grow align-items-center flex-row-reverse"
+        data-aos="fade-up" data-aos-duration="1000">
+        <div class="about_box d-flex justify-content-center">
+            <div class="about_picbox d-flex align-items-center">
+                <figure class=""><img src="./images/About_computer.jpg" alt=""></figure>
+            </div>
+        </div>
+        <div class="about_box d-flex align-items-center justify-content-center">
+            <div class="about_box_right d-flex justify-content-center flex-column align-items-center">
+                <h3>區域大標題一</h3>
+                <article>
+                    <p>微有球頭時主，在在案家？防上家奇否這、的業入：言思政是參長他回票失劇就高論北失後認從隊化上小落找根正不社。氣出那月。年管決。有國樂分美關石可建續你人就腳爭地把之的我期最到客富方修絕也更車力心：中自教了人接財作孩、修合的大空種即行海自白、通的清去有度：名方常！
+
+                    </p>
+                    <p>不市示清的在了甚而師了大，果一議一空：味小至五了工能方的育算現利急，護開去機人愛非觀全待眼孩雖言落好國月規，
+                        一到生過，中外多母理能建家！個中刻景管已我說方間臺因月：被成？
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <div class="d-flex justify-content-center">
+        <div class="enter_line_black"></div>
+    </div>
+    <div class="portfolio" id="portfolio" data-aos="fade-up" data-aos-duration="1000">
+        <section class=" d-flex justify-content-center flex-column  align-items-center">
+            <h2>系列相冊</h2>
+            <h4>portfolio</h4>
+            <article>
+                <p>微有球頭時主，在在案家？防上家奇否這、的業入：言思政是參長他回票失劇就高論北失後認從隊化上小落找根正不社。氣出那月。年管決。有國樂分美關石可建續你人就腳爭地把之的我期最到客富方修絕也更車力心：中自教了人接財作孩、修合的大空種即行海自白、通的清去有度：名方常！
+                </p>
+            </article>
+
+        </section>
+    </div>
+
+    <section class="portfolio_main_out d-flex justify-content-center align-items-center">
+        <div class="portfolio_main left">
+            <figure class="d-flex align-items-center justify-content-center"><img src="./images/portfolio03.jpg" alt="">
+            </figure>
+        </div>
+        <div class="portfolio_main right d-flex align-items-center justify-content-center">
+            <article class="d-flex justify-content-center flex-column">
+                <div class="portfolio_main_title">
+                    <h2>所舞家看</h2>
+                    <p class="time">2020.03.11</p>
+                </div>
+                <p class="cont">
+                    國會家劇出力功跟一美要產銀果無們度：畫教不色話黃臺行舞千酒不，分錯無克。們獲爭件那親更嚴必二著今用遊人臺事提於輕，現化公成廠險馬市神病傷向心我住消畫基應方老長必來！斷寶車集！結文臺也、成山媽不有親象傳這都的前不節府小體是要？
+
+                </p>
+                <p class="cont">育親西，時能學們我新友最只為正係。細火起於兒年；正加而的到如福足少著；起玩能平者，部朋場爸企，深己出子？會己陸等立問的。山向內防公創制法神生良嗎收刻是主面重、正快成。
+                </p>
+                <p class="cont">且元的香增接年良過業行走一也此王她斯，呢理起中小著打人什這庭過玩深日集。
+                </p>
+                <a class="text-decoration-none">
+                    <div class="d-flex justify-content-end">
+                        <div class="portfolio_more_btn d-flex ">more
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+    <section class="portfolio_main_out d-flex justify-content-center align-items-center">
+        <div class="portfolio_main left">
+            <figure class="d-flex align-items-center justify-content-center"><img src="./images/portfolio01.jpg" alt="">
+            </figure>
+        </div>
+        <div class="portfolio_main right d-flex align-items-center justify-content-center">
+            <article class="d-flex justify-content-center flex-column">
+                <div class="portfolio_main_title">
+                    <h2>隨心的工</h2>
+                    <p class="time">2020.03.11</p>
+                </div>
+                <p class="cont">
+                    國會家劇出力功跟一美要產銀果無們度：畫教不色話黃臺行舞千酒不，分錯無克。們獲爭件那親更嚴必二著今用遊人臺事提於輕，現化公成廠險馬市神病傷向心我住消畫基應方老長必來！斷寶車集！結文臺也、成山媽不有親象傳這都的前不節府小體是要？
+
+                </p>
+                <p class="cont">育親西，時能學們我新友最只為正係。細火起於兒年；正加而的到如福足少著；起玩能平者，部朋場爸企，深己出子？會己陸等立問的。山向內防公創制法神生良嗎收刻是主面重、正快成。
+                </p>
+                <p class="cont">且元的香增接年良過業行走一也此王她斯，呢理起中小著打人什這庭過玩深日集。
+                </p>
+                <a class="text-decoration-none">
+                    <div class="d-flex justify-content-end">
+                        <div class="portfolio_more_btn d-flex ">more
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+    <section class="portfolio_main_out d-flex justify-content-center align-items-center">
+        <div class="portfolio_main left">
+            <figure class="d-flex align-items-center justify-content-center"><img src="./images/portfolio02.jpg" alt="">
+            </figure>
+        </div>
+        <div class="portfolio_main right d-flex align-items-center justify-content-center">
+            <article class="d-flex justify-content-center flex-column">
+                <div class="portfolio_main_title">
+                    <h2>特件就食</h2>
+                    <p class="time">2020.03.11</p>
+                </div>
+                <p class="cont">
+                    國會家劇出力功跟一美要產銀果無們度：畫教不色話黃臺行舞千酒不，分錯無克。們獲爭件那親更嚴必二著今用遊人臺事提於輕，現化公成廠險馬市神病傷向心我住消畫基應方老長必來！斷寶車集！結文臺也、成山媽不有親象傳這都的前不節府小體是要？
+
+                </p>
+                <p class="cont">育親西，時能學們我新友最只為正係。細火起於兒年；正加而的到如福足少著；起玩能平者，部朋場爸企，深己出子？會己陸等立問的。山向內防公創制法神生良嗎收刻是主面重、正快成。
+                </p>
+                <p class="cont">且元的香增接年良過業行走一也此王她斯，呢理起中小著打人什這庭過玩深日集。
+                </p>
+                <a class="text-decoration-none">
+                    <div class="d-flex justify-content-end">
+                        <div class="portfolio_more_btn d-flex ">more
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+    <!-- bookNowbookNkNoNowbookNow -->
+    <section class="bookNow d-flex align-items-center justify-content-center" id="book">
+        <article class="">
+            <h2>BOOK NOW</h2>
+            <p>
+                化人來輕了定是斷夫斯說學流人、美斷在力供成的作藝失化中智生影夠對！說教會我動教放當飛民期難人……是廣生不不國場集美吃遠！目新們利力。南黃不苦效式常洲就。</p>
+            <a class="bookNow_btn text-decoration-none">立即預約</a>
+        </article>
+    </section>
+    <!-- contact -->
+    <section class="contactus" id="contact">
+        <div class="contactus_fram">
+            <h2>CONTACT US</h2>
+            <div class="d-flex contactus_fram_2">
+                <div class="contactus_box one">
+                    <figure><img src="./images/logo_w.svg" alt=""></figure>
+                    <p>化人來輕了定是斷夫斯說學流人、美斷在力供成的作藝失化中智生影夠對！說教會我動教放當飛民期難人……是廣生不不國場集美吃遠！目新們利力。南黃不苦效式常洲就。
+
+                        同長動時個個財建連；回天算夜西氣式化把這對來師以？報印的她會到山完的女法能消集從頭張物房市學的力、女東少四故狀子只受大別改阿重經當中一一談。</p>
+                </div>
+                    <ul class="contactus_box two d-flex justify-content-between list-unstyled align-items-center">
+                        <li><a href="" target="_blank"><img src="./images/facebook.svg"></a></li>
+                        <li><a href="" target="_blank"><img src="./images/mail.svg"></a></li>
+                        <li><a href="" target="_blank"><img src="./images/list.svg"></a></li>
+                        <li><a href="" target="_blank"> <img src="./images/phone.svg"></a></li>
+                    </ul>
+
+            </div>
+            <div class="contactus_box_bottom d-flex justify-content-between">
+                <figure><img src="./images/42241133_2432193593463091_6121404470791241728_o.jpg" alt=""></figure>
+                <figure><img src="./images/contaceus02.jpg" alt=""></figure>
+                <figure><img src="./images/portfolio01.jpg" alt=""></figure>
+                <figure><img src="./images/portfolio02.jpg" alt=""></figure>
+                <figure><img src="./images/index_3.webp" alt=""></figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./vegas/vegas.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+
+        $("#header_menu_btn").click(function () {
+            let windowheight = $(this).height()
+            let scrollTop = $(this).scrollTop()
+            let changelogo = windowheight - 150
+
+            $(".bar_title").toggleClass("active")
+            $(".main_menu_dropdown").toggleClass("active")
+            $(".main_menu_dropdown_mobile").toggleClass("active")
+            $(".bar1").toggleClass("active")
+            $(".bar2").toggleClass("active")
+            $(".side_guided").toggleClass("hide")
+        })
+
+
+        $(window).on("scroll", function () {
+            let windowheight = $(this).height()//視窗高度
+            let scrollTop = $(this).scrollTop()//滾動
+            let aboutScrolltop = $(".about").offset().top - 150//關於我們
+            let PortfolioScrolltop = $(".portfolio_main").offset().top - 150//相冊距離頂部高度
+            let bookNowScrolltop = $(".bookNow").offset().top - 150
+            let contaceusScrolltop = $(".contactus").offset().top - 150
+            // console.log(`視窗:${windowheight} 滾動:${scrollTop} 換${changelogo} ABOUT:${aboutScrolltop} 相冊:${PortfolioScrolltop}`)
+
+            //判斷式是A或B中間用||
+            if (scrollTop <= aboutScrolltop || scrollTop >= PortfolioScrolltop - 300 && scrollTop <= bookNowScrolltop - 500 || scrollTop >= contaceusScrolltop - 400) {
+                $(".logo_b").removeClass("cansee")
+                $(".logo_w").addClass("cansee")
+                $(".bar_title").removeClass("cansee")
+                $(".bar").removeClass("cansee")
+                $("nav.main_menu").removeClass("scrolldown")
+                $(".side_guided").removeClass("scrolldown")
+
+            } else {
+                $(".logo_b").addClass("cansee")
+                $(".logo_w").removeClass("cansee")
+                $(".bar_title").addClass("cansee")
+                $(".bar").addClass("cansee")
+                $("nav.main_menu").addClass("scrolldown")
+                $(".side_guided").addClass("scrolldown")
+            }
+
+
+            if (scrollTop >= PortfolioScrolltop - 800 && scrollTop <= bookNowScrolltop - 500) {
+                // console.log("Portfolio")
+                $(".guided li a").eq(0).removeClass("now")
+                $(".guided li a").eq(1).addClass("now").siblings().removeClass("now")
+                $(".guided li a").eq(2).removeClass("now")
+                $(".guided li a").eq(3).removeClass("now")
+                $(".guided_name").addClass("portfolio_point")
+                $(".guided_name_title li").addClass("portfolio_point")
+                $(".guided_name").removeClass("booknow_point")
+                $(".guided_name_title li").removeClass("booknow_point")
+                $(".guided_name").removeClass("contact_point")
+                $(".guided_name_title li").removeClass("contact_point")
+            } else if (scrollTop >= bookNowScrolltop - 500 && scrollTop <= contaceusScrolltop - 500) {
+                // console.log("bookNow")
+                $(".guided li a").eq(0).removeClass("now")
+                $(".guided li a").eq(1).removeClass("now")
+                $(".guided li a").eq(2).addClass("now")
+                $(".guided li a").eq(3).removeClass("now")
+                $(".guided_name").removeClass("portfolio_point")
+                $(".guided_name_title li").removeClass("portfolio_point")
+                $(".guided_name").addClass("booknow_point")
+                $(".guided_name_title li").addClass("booknow_point")
+                $(".guided_name").removeClass("contact_point")
+                $(".guided_name_title li").removeClass("contact_point")
+            }
+            else if (scrollTop >= contaceusScrolltop - 500) {
+                // console.log("contact");
+                $(".guided li a").eq(0).removeClass("now")
+                $(".guided li a").eq(1).removeClass("now")
+                $(".guided li a").eq(2).removeClass("now")
+                $(".guided li a").eq(3).addClass("now")
+                $(".guided_name").removeClass("portfolio_point")
+                $(".guided_name_title li").removeClass("portfolio_point")
+                $(".guided_name").removeClass("booknow_point")
+                $(".guided_name_title li").removeClass("booknow_point")
+                $(".guided_name").addClass("contact_point")
+                $(".guided_name_title li").addClass("contact_point")
+
+            }
+            else {
+                $(".guided li a").eq(0).addClass("now")
+                $(".guided li a").eq(1).removeClass("now")
+                $(".guided li a").eq(2).removeClass("now")
+                $(".guided li a").eq(3).removeClass("now")
+                $(".guided_name").removeClass("portfolio_point")
+                $(".guided_name_title li").removeClass("portfolio_point")
+            }
+        })
+
+
+        $("a").click(function () {
+            let id = $(this).attr("data-id");
+            let target_top = $(`#${id}`).offset().top;
+            // $(window).scrollTop(target_top)
+            $("html").animate({ scrollTop: $(`#${id}`).offset().top }, 500);
+        });
+
+
+        $("#top").vegas({
+            // transitionDuration: 5000,
+            slides: [
+                { src: "./images/index_0.webp" },
+                { src: "./images/index_1.webp" },
+                { src: "./images/index_2.webp" },
+                { src: "./images/index_3.webp" },
+
+            ],
+            timer: false,
+            overlay: './vegas/overlays/05.png',
+            transition: 'blur2',
+            // animation:'kenburns'
+
+        });
+
+
+    </script>
+</body>
+
+</html>
