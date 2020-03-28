@@ -1,12 +1,12 @@
 
-var http = require('http'); // 1 - 載入 Node.js 原生模組 http
- 
-var server = http.createServer(function (req, res) {   // 2 - 建立server
-       res.write('Hello World!');
-    // 在此處理 客戶端向 http server 發送過來的 req。
- 
-});
- 
-server.listen(3000); //3 - 進入此網站的監聽 port, 就是 localhost:xxxx 的 xxxx
- 
-console.log('Node.js web server at port 3000 is running..')
+var http = require('http');
+var fs = require('fs');
+
+var server = http.createServer(function(req, res){
+    fs.readFile('index.html',function (err, data){
+        res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+        res.write(data);
+        res.end();
+    });
+})
+server.listen(3000);
