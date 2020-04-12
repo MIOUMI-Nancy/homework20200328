@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #fff;
+        }
+
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #fcb824;
+            border-radius: 50%;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        /* #ball1 {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #f22;
+      border-radius: 50%;
+      color: #fff;
+      line-height: 40px;
+      text-align: center;
+    } */
+    </style>
+</head>
+
+<body>
+    <!-- <input type="number" id='score' onchange="doCal()" onkeyup="doCal()" min='0' max="100"><br> -->
+    <div id="rect"></div>
+    <script src="/TweenMax.min.js"></script>
+    <script>
+        const rect = document.querySelector('#rect')
+        let b, i, unitRad, ballNum
+        ballNum = 12
+        unitRad = 2 * Math.PI / ballNum
+        for (let i = 0; i < ballNum; i++) {
+            b = document.createElement('div')
+            b.id = 'ball' + (i + 1)
+            b.className = 'ball'
+            b.style.left = 100 + 100 * Math.cos(i * unitRad) + 'px'
+            b.style.top = 100 + 100 * Math.sin(i * unitRad) + 'px'
+            rect.appendChild(b)
+        }
+        // var tl = new TimelineLite();
+        // TweenLite.from('#ball1', 2, {
+        //     x: "+=200px",
+        //     backgroundColor: "#11aac5"
+        // });
+        // TweenLite.from('#ball2', 2, {
+        //     x: "+=200px",
+        //     backgroundColor: "#11aac5"
+        // });
+
+        // var tl = new TimelineLite();
+        // tl.from('#ball1', 1, {
+        //     x: "+=200px",
+        //     autoAlpha: 0,
+        //     backgroundColor: "#11aac5"
+        // }).from("#ball2", 1, {
+        //     x: "+=200px",
+        //     backgroundColor: "#11aac5"
+        // });
+
+
+
+        var tl = new TimelineLite();
+        tl
+            .from("#ball1", 1, {
+                x: "-=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+            .from("#ball2", 1, {
+                x: "-=50px",
+                y: "-=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+            .from("#ball3", 1, {
+                x: "-=50px",
+                y: "-=50px",
+                autoAlpha: 0
+            }, "-=0.5")
+
+            .from("#ball4", 1, {
+                y: "-=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+
+            .from("#ball5", 1, {
+                x: "+=10px",
+                y: "-=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+
+            .from("#ball6", 1, {
+                x: "+=50px",
+                y: "-=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+            
+            .from("#ball7", 1, {
+                x: "+=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+
+            .from("#ball8", 1, {
+                x: "+=50px",
+                y: "+=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+
+            .from("#ball9", 1, {
+                x: "+=50px",
+                y: "+=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+
+            .from("#ball10", 1, {
+                y: "+=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+
+            .from("#ball11", 1, {
+                x: "-=50px",
+                y: "+=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+ 
+            .from("#ball12", 1, {
+                x: "-=50px",
+                y: "+=50px",
+                autoAlpha: 0
+            }, "-=0.3")
+
+
+
+
+
+        ;
+
+
+    </script>
+</body>
+
+</html>
